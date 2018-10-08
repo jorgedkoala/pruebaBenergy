@@ -1,0 +1,7 @@
+{
+  "name": "pruebabenergy",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
