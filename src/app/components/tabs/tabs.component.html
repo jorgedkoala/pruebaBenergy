@@ -1,3 +1,17 @@
-<p>
-  tabs works!
-</p>
+<ion-tabs #ionTabs tabsHighlight="true" useRouter="true" tabbarHighlight="true" (click)="selectTab($event, ionTabs)">
+    <ion-tab name="{{i}}" [label]="'Tabs.'+tab.title | translate" (ionSelect)="ionSelect(tab.title)"
+    [icon]="tab.icon" [href]="tab.url"  *ngFor="let tab of appTabs; let i = index">
+    <!-- <ion-router-outlet id="tabs" name="tabs" main swipeBackEnabled="true"></ion-router-outlet> -->
+    </ion-tab>
+    <!-- <ion-tab label="Home" icon="home" href="/Home:Home">
+      <ion-router-outlet name="Home"></ion-router-outlet>
+    </ion-tab>
+    <ion-tab label="List" icon="list" href="/List:List">
+      <ion-router-outlet name="List"></ion-router-outlet>
+    </ion-tab>
+    <ion-tab label="Profile" icon="contact" href="/Profile:Profile">
+      <ion-router-outlet name="Profile"></ion-router-outlet>
+    </ion-tab> -->
+  </ion-tabs>
+
+  <!-- color="primary"  -->

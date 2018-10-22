@@ -1,0 +1,23 @@
+{
+"App":"Benergy",
+"Tabs":{
+    "Home":"Inicio",
+    "List":"Lista",
+    "Profile":"Perfil"
+},
+"Menu":{
+    "Home":"Home",
+    "List":"List",
+    "Profile":"Profile",
+    "More info":"More info",
+    "Push Notifications":"Puch notifications",
+    "Log off":"Log off"    
+},
+"Home":{
+    "Boton1":"Ver video 1",
+    "Boton2":"Ver video 2"
+    },
+"Profile":{
+    "UltimaFecha":"La última vez que entraste en la aplicación fue el:"
+}
+}

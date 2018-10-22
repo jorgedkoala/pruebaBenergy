@@ -1,0 +1,10 @@
+<div class="modal">
+  <div class="contentVideo">
+    <!-- <ion-button ion-item color="primary" shape="round" expand="full" (click)="cerrar()">cerrar</ion-button> -->
+    <ion-fab-button class="botonCerrar" color="primary" (click)="cerrar()" mini><ion-icon name="close"></ion-icon></ion-fab-button>
+    <video  style="width:inherit"  class="video" controls="controls" preload="metadata" autoplay="autoplay" webkit-playsinline="webkit-playsinline" class="videoPlayer">
+      <source [src]="videos[video]" type="video/mp4"/>
+    </video>
+    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/ghDdsTmt7_0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+  </div>
+</div>

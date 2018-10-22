@@ -1,0 +1,25 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>tabs</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+</ion-content> -->
+<ion-tabs>
+      <ion-tab label="Home" icon="home" href="/tabs/(Home:Home)">
+      <ion-router-outlet name="Home"></ion-router-outlet>
+    </ion-tab>
+    <ion-tab label="List" icon="list" href="/tabs/(List:List)">
+      <ion-router-outlet name="List"></ion-router-outlet>
+    </ion-tab>
+    <ion-tab label="Profile" icon="contact" href="/tabs/(Profile:Profile)">
+      <ion-router-outlet name="Profile"></ion-router-outlet>
+    </ion-tab>
+    <!--<ion-router-outlet id="tabs" name="tabs" swipeBackEnabled="true"></ion-router-outlet>
+     <ion-tab name="{{i}}" [label]="'Tabs.'+tab.title | translate" (ionSelect)="ionSelect(tab.title)"
+    [icon]="tab.icon" [href]="tab.url"  *ngFor="let tab of appTabs; let i = index">
+    
+    </ion-tab> -->
+</ion-tabs>

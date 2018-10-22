@@ -3,6 +3,10 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { TranslateService } from '@ngx-translate/core';
+
+import { SettingsService } from './providers/settings/settings.service';//Carga y guarda el perfil y otras variables globlales que se quieran usar
+import {Profile} from '../models/profile';
 
 @Component({
   selector: 'app-root',
@@ -11,23 +15,14 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 })
 
 export class AppComponent {
-  public appMenu = [
-    { title: 'Home',url: '/Home',icon: 'home',line:'none'},
-    { title: 'List',url: '/List',icon: 'list',line:'none'},
-    { title: 'Profile',url: '/Profile',icon: 'contact',line:'none'},
-    { title: 'More info',url: '',icon: 'add',line:'full'},
-    { title: 'Push Notifications',url: '',icon: '',line:'full'},
-    { title: 'Log off',url: '',icon: 'contact',line:'full'}
-  ];
-  public appTabs = [
-    { title: 'Home',url: '/Home',icon: 'home'},
-    { title: 'List',url: '/List',icon: 'list'},
-    { title: 'Profile',url: '/Profile',icon: 'contact'}
-  ];
+
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private settings: SettingsService,
+    private translate: TranslateService
   ) {
     this.initializeApp();
   }
@@ -36,16 +31,24 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.show();
-
+      setTimeout(()=>{this.splashScreen.hide()},500)
+      this.initTranslate();
+      this.settings.startProfile();//CREA Y-O ACTUALIZA EL PERFIL
     });
   }
 
-  selectTab(event){
-    console.log(event);
+  initTranslate() {
+    // Set the default language for translation strings, and the current language.
+    this.translate.setDefaultLang('es');
+    this.translate.use('es')
+    const browserLang = this.translate.getBrowserLang();
+
+    // if (browserLang) {
+    //     this.translate.use(this.translate.getBrowserLang());
+    // } else {
+    //   this.translate.use('es'); // Set your language here
+    // }
   }
 
-  buttonClick(event){
-    console.log('itemClicked',event);
-  }
 
 }

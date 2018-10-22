@@ -1,9 +1,40 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Profile</ion-title>
+    <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
+  <ion-card *ngIf="perfil">
+    <ion-card-header>
+      <ion-card-title>
+
+        <span *ngIf="edit!=true" (click)="edit=true" (touch)="edit=true">{{perfil.name}}</span>
+        <ion-item *ngIf="edit==true">
+          <ion-label position="floating">Nombre:</ion-label>
+          <ion-input [(ngModel)]="perfil.name"></ion-input>
+          <ion-fab-button color="primary" (click)="saveProfile()">Ok</ion-fab-button>
+        </ion-item>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div class="avatar">
+        <span class="inputLabel">
+          <label class="inputlabelRound" for="imagen"></label>
+        </span>
+        <span class="image">
+          <img class="foto" [src]="perfil.avatar" (error)="avatar='/assets/images/demoAvatar.png'">
+        </span>
+      </div>
+
+    </ion-card-content>
+    <ion-footer>
+      <span class="footer">
+        {{'Profile.UltimaFecha' | translate}} {{perfil.last_date | date: "dd-MM-yyyy hh:mm"}}
+      </span>
+    </ion-footer>
+  </ion-card>
+  <input id="imagen" class="inputfile" type="file" name="imagen" (change)="updateImg($event)" accept=".gif,.jpg,.jpeg,.png"/>
 
 </ion-content>
