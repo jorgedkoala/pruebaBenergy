@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, NavParams } from '@ionic/angular';
-import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media/ngx';
 
 @Component({
   selector: 'app-video',
@@ -12,13 +11,11 @@ public videos: string[]=[];
 public video: number;
   constructor(
     public modalController : ModalController,
-    private streamingMedia: StreamingMedia,
     private navParams: NavParams
   ) { }
 
   ngOnInit() {
     const video: string = this.navParams.get('video');
-    console.log('VIDEO: ',video);
     this.video=parseInt(video)-1;
     this.videos = [
       'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
@@ -27,20 +24,8 @@ public video: number;
     ];
   }
 
-  play(video){
-    let options: StreamingVideoOptions = {
-      successCallback: () => { console.log('Video played') },
-      errorCallback: (e) => { console.log('Error streaming',e) },
-      // shouldAutoClose: true,
-      // controls: false}
-    };
-    let url = this.videos[video];
-    this.streamingMedia.playVideo(url,options);
-   // this.streamingMedia.playVideo('https://www.youtube.com/watch?v=D25DPvdoPfw', options);
-  }
 
   cerrar(){
-    console.log('Cerrar');
     this.modalController.dismiss();
   }
 }

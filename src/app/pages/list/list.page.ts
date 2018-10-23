@@ -20,7 +20,6 @@ public elemento: ElementoTest = new ElementoTest('','',[]);
     let url = URLS.items;
     this.api.get(url).subscribe(
       (respuesta)=>{
-        console.log('Respuesta getting Items', respuesta);
         this.elemento.app_name = respuesta["app_name"];
         this.elemento.test_name = respuesta["test_name"];
         this.elemento.list = respuesta["list"];

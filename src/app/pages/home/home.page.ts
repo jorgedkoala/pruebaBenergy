@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { VideoComponent } from '../../components/video/video.component';
-import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
+
 
 
 @Component({
@@ -12,8 +12,7 @@ import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
 export class HomePage implements OnInit {
 
   constructor(
-    public modalController : ModalController,
-    public youTube: YoutubeVideoPlayer
+    public modalController : ModalController
   ) { }
 
   ngOnInit() {
@@ -25,10 +24,6 @@ export class HomePage implements OnInit {
     const modal = await this.modalController.create({
       component: VideoComponent,
       componentProps:{video:idVideo}
-      // cssClass: 'modal',
-      // showBackdrop: false,
-      // backdropDismiss: true,
-
     });
     return await modal.present();
   }
@@ -44,7 +39,4 @@ export class HomePage implements OnInit {
     })
   }
 
-  openTube(){
-    this.youTube.openVideo('ghDdsTmt7_0');
-  }
 }

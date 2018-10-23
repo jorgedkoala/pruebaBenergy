@@ -21,16 +21,4 @@ export class TabsPage implements OnInit {
 
   ngOnInit() {
   }
-  selectTab(evento){
-    console.log(this.route);
-    console.log(this.route.pathFromRoot);
-    console.log(this.route.firstChild);
-    console.log(this.route.parent);
-
-   }
-  
-   ionSelect(seletedTab: string) {
-   // console.log(seletedTab);
-
- }
 }

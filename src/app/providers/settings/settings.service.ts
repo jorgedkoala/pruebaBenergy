@@ -53,7 +53,6 @@ public startProfile(){
   }
     this.perfil= perfil;
     this.profile.emit(perfil)
-    console.log('profile Settings',this.profile,perfil);
     perfil.last_date = new Date();
     this.saveProfile(perfil);
 });

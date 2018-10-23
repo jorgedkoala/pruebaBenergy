@@ -10,11 +10,8 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 //************************PLUGINS */
-//import { WebView } from '@ionic-native/ionic-webview/ngx';
-import { StreamingMedia } from '@ionic-native/streaming-media/ngx';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
 //************************PLUGINS */
 
 
@@ -23,14 +20,12 @@ import { AppRoutingModule } from './app-routing.module';
 
 //***********************MIS COMPONENTS */
 import { MenuComponent } from './components/menu/menu.component';
-import { TabsComponent } from './components/tabs/tabs.component';
 import { HeaderComponent } from './components/header/header.component';
 import { VideoComponent } from './components/video/video.component';
 //***********************MIS COMPONENTS */
 
-//***********************MIS PAGES */
-//import { ProfilePage } from './pages/profile/profile.page';
-//***********************MIS PAGES */
+
+
 
 
 
@@ -46,7 +41,6 @@ export function createTranslateLoader(http: HttpClient) {
     AppComponent, 
   /******MIS COMPONENTS */
     MenuComponent, 
-    TabsComponent, 
     HeaderComponent, 
     VideoComponent,
   //*****MIS PAGES */
@@ -73,8 +67,6 @@ export function createTranslateLoader(http: HttpClient) {
   providers: [
     StatusBar,
     SplashScreen,
-    StreamingMedia,
-    YoutubeVideoPlayer,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
